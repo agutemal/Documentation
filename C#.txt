@@ -1,0 +1,40 @@
+Es un lenguaje de programación de multi propósito
+-Tipado estático
+-Orientado a objetos
+-Es un lenguaje compilado, el código es traducido a lenguaje maquina que puede entender la pc
+-2024 salió la versión 13
+
+==============TIPOS DE DATOS===========
+int, decimal, char, string, bool, object, interface, class
+decimal=10.5m;
+
+==============CONCATENAR=================
+Console.WriteLine("NOMBRE: "+nombre);
+Console.WriteLine($"nombre: {nombre} apellido: {apellido}");
+
+=============CONSTANTES==================
+const int numero=50;
+var puede aceptar tipos de datos variados
+var numero=50;
+var numero="Hola";
+
+===============CASTING===================
+int sueldo = 200;
+string cadenaSuledo = sueldo.ToString();
+Console.WriteLine("El sueldo es: " + cadenaSuledo);
+
+decimal precio = 19.99m;
+int precion = (int) precio;
+
+=============CLASE MATH=================
+Proporciona una serie de métodos matemáticos
+int numero 16;
+Math.Sqrt(numero)
+
+============CLASE STRING================
+Proporciona una serie de métodos para cadenas
+string nombre = "Abrahan Wilmer Guatemal Alba";
+Console.WriteLine($"El nombre tiene longitud: {nombre.Length}!");
+
+* el signo \ es escape de "
+Console.WriteLine("El mundo es un lugar \"hermoso\"");

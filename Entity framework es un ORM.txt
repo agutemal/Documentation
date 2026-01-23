@@ -1,0 +1,141 @@
+Entity framework es un ORM
+ORM: mapeo de objeto relacional, es una tecnica que relaciona las entidades del lenguaje de programación
+con sus correspondientes elementos en una base de datos.
+
+Swagger: es un conjunto de herramientas para diseñar, construir, documentar y usar API Rest de manera estandarizada
+
+Instalar dependencias: clic derecho en el proyecto->administrar paquetes Nuget->buscar
+Microsoft.EntityFrameworkCore
+Microsoft.EntityFrameworkCore.Sql
+Microsoft.EntityFrameworkCore.Tools
+Microsoft.EntityFrameworkCore.SqlServer
+Validar que tenga las versiones mas estables
+
+-Validar que este funcionando: 
+Proyecto->Dependencias->Paquetes
+
+-Conectar a una base de datos sqlserver
+
+1)opción para cuando la base de datos ya esta creada
+buscar->consola del Administrador de Paquetes
+Scaffold-DbContext "Data Source=name_server;Database=name_database;Trusted_Connection=True;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -Force
+
+2)Para crear la base de datos desde las entidades
+Proyecto->appsettings.json
+ingresar la siguiente linea:
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=DESKTOP-565TMAN;Database=FINANSYS;Trusted_Connection=True;TrustServerCertificate=True;"
+  }
+
+***********Crear clase AppDbContext.cs que extiende DbContext
+¿Qué es DbContext?
+
+Es una clase que hereda de DbContext (de Entity Framework Core).
+Abre y administra la conexión, su función es gestionar la conexión a la base de datos y definir qué tablas existen en esa base según tus clases (modelos).
+
+Ubicación recomendada: 
+Depende del tipo de proyecto, pero la mejor práctica general es crear una carpeta:
+Data o Persistence
+
+En otras palabras:
+
+DbContext es el “cerebro” de Entity Framework.
+Es el objeto que ASP.NET usa para consultar, insertar, actualizar y eliminar datos en SQL Server.
+
+*DbSet: sirve para especificar que existe una tabla
+
+
+agregar la conexión al Archivo Program.cs
+// 🔹 Agregar conexión a la base de datos SQL Server
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+*****Instalar Swagger (desde la versión Net 9 no viene instalado)
+-Abrir administrador de paquetes NuGet
+-buscar: swashbuckle.aspnetcore.swagger,swashbuckle.aspnetcore
+-Modificar el archivo Programa.cs: antes de builder añadir builder.Services.AddSwaggerGen();
+en el if luego de app añadir:     app.UseSwaggerUI(); app.UseSwagger();
+abrir el link: https://localhost:44309/swagger/index.html
+
+=====================CLASE ENTITY===============
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace clientes_api.Models
+[Table("booking")]
+
+[Key] // Clave primaria
+[DatabaseGenerated(DatabaseGeneratedOption.Identity)] // IDENTITY (1,1)
+public int booking_id { get; set; }
+ [Column("status")]
+ [StringLength(100)]
+[Required]
+
+==========CLASE CONTROLLER===================
+[Route("api/v1/[controller]")]----->controller:quita la palabra Controller del nombre de la clase
+class brandController
+/api/v1/brand
+
+1) crear la variable de dbcontex dentro de la clase: private readonly Data.AppDbContext _context;
+2) Crear el contructor
+3) crear los métodos HTTPS
+
+
+============EXPORTAR BASE DE DATOS==============
+Clik derecho BDD->Task(tareas)->Expor data-tier Aplication(Exportar aplicación de capa)->Next->seleccionar ruta->Next
+
+============PUBLICAR PROYECTO==============
+Clik derecho en el nombre del proyecto->Publicar->Carpeta->Seleccionar carpeta->Publicar
+
+==========HACER BUILD REACT VITE============
+ejecutar en consola-> npm run build->crear carpeta dist->archivos estáticos optimizados (HTML, JS, CSS)
+
+
+========================================pROGRAM
+using clientes_api.Data;
+using Microsoft.EntityFrameworkCore;
+
+var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowFrontend", policy =>
+    {
+        policy
+            .WithOrigins("http://localhost:5173") // tu Vite
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+    });
+});
+
+// 🔹 Agregar conexión a la base de datos SQL Server
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+// Add services to the container.
+
+builder.Services.AddControllers();
+// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
+builder.Services.AddOpenApi();
+builder.Services.AddSwaggerGen();
+var app = builder.Build();
+
+// Configure the HTTP request pipeline.
+if (app.Environment.IsDevelopment())
+{
+    app.MapOpenApi();
+    app.UseSwaggerUI();
+    app.UseSwagger();
+}
+
+app.UseHttpsRedirection();
+// Usar la política de CORS (MUY IMPORTANTE: antes de UseAuthorization)
+app.UseCors("AllowFrontend");
+app.UseAuthorization();
+
+app.MapControllers();
+
+app.Run();
+Dario leon
+=============================
+

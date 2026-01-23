@@ -1,0 +1,16 @@
+ENTITY FRAMEWORK
+-Code First
+-Database first->se crea primero una base de datos
+-Model first
+
+DBContex: es una clase de entity framework que se utiliza para interactuar con una BDD y es la clase principal para realizar operaciones CRUD
+
+DBSet: hace representación de cada una de las tablas
+public DbSet<Booking> Bookings { get; set; }
+
+-Database first
+se puede crear el decontext desde consola usando dotnet
+
+-Code First
+se crea las clases entidades y entity framework se encarga de crear las tablas
+
