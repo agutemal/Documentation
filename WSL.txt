@@ -1,0 +1,13 @@
+==============WSL==============
+WSL (Windows Subsystem for Linux) es una característica de Windows 10/11 y Windows Server que permite ejecutar un entorno 
+GNU/Linux nativo directamente en Windows sin la sobrecarga de una máquina virtual o el arranque dual
+
+Pasos para instalar: 
+1) wsl --install        instala la aplicacion 
+2) wls --version        muestra version de wsl
+3) wsl -l -v            muestra distribuciones instaladas
+
+Integracion con dockert desktop:
+1) ir a docker desktop Settings->general->Use the WSL 2 based engine.
+1) ir a docker desktop Settings->Resources->WSL Integration->Enable integration with additional distros.
+3) seleccionar la version de linux que se esta usando con WSL.
