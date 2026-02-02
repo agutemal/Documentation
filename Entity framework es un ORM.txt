@@ -4,7 +4,10 @@ con sus correspondientes elementos en una base de datos.
 
 Swagger: es un conjunto de herramientas para diseñar, construir, documentar y usar API Rest de manera estandarizada
 
-Instalar dependencias: clic derecho en el proyecto->administrar paquetes Nuget->buscar
+================================================
+1) Instalar paquetes NuGet necesarios          | 
+================================================
+clic derecho en el proyecto->administrar paquetes Nuget->buscar
 Microsoft.EntityFrameworkCore
 Microsoft.EntityFrameworkCore.Sql
 Microsoft.EntityFrameworkCore.Tools
@@ -14,9 +17,10 @@ Validar que tenga las versiones mas estables
 -Validar que este funcionando: 
 Proyecto->Dependencias->Paquetes
 
--Conectar a una base de datos sqlserver
-
-1)opción para cuando la base de datos ya esta creada
+===============================================
+2) Configurar cadena de conexión              |
+===============================================
+2.1)opción para cuando la base de datos ya esta creada
 buscar->consola del Administrador de Paquetes
 Scaffold-DbContext "Data Source=name_server;Database=name_database;Trusted_Connection=True;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -Force
 
