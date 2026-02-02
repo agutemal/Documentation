@@ -1,0 +1,38 @@
+*********Comandos Basicos Docker******************
+
+docker version
+docker-compose version	
+docker-compose up -d: Crear en modo detach los contenedores (servicios) que están descritos en el docker-compose.yml
+no se muestra mensajes de log
+docker-compose stop: Detiene los contenedores
+docker-compose run: Inicia los contenedores descritos en el docker-compose.yml que estén parados.
+docker-compose restart: Reinicia los contenedores.
+docker-compose logs: Muestra los logs de todos los servicios del escenario
+docker-compose logs servicio1: Muestra los logs del servicio llamado servicio1
+docker-compose ps: lista los contenedores
+
+*******Eliminar un contenedor*****************
+docker-compose stop
+docker-compose down
+
+**************Ingreso a consola**************
+ingresar a consola: 
+docker exec -it <nombre_o_id_del_contenedor> bash
+docker exec -it mysql_server bash
+docker exec -it processmaker bash
+
+
+Lsitar bolumenes: sudo docker volume ls
+Eliminar volumenes: docker volume rm volume_name volume_name
+Eliminar un contenedor: docker rmi Image Image
+Ubicacion de los volumenes: ls /var/lib/docker/volumes/
+sudo docker exec -it processmaker_db mysql -uroot -prootpassword -e "SHOW DATABASES;"
+validar configuracion apache: /usr/sbin/httpd -t
+
+/etc/httpd/conf/httpd.conf
+cat /var/log/httpd/error_log
+iniciar apache dentro de un contenedor: /usr/sbin/httpd -k start
+ps aux | grep httpd
+
+mkdir -p /run/httpd
+chown apache:apache /run/httpd
