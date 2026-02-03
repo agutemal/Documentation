@@ -20,33 +20,61 @@ Proyecto->Dependencias->Paquetes
 ===============================================
 2) Configurar cadena de conexión              |
 ===============================================
-2.1)opción para cuando la base de datos ya esta creada
-buscar->consola del Administrador de Paquetes
-Scaffold-DbContext "Data Source=name_server;Database=name_database;Trusted_Connection=True;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -Force
+La cadena de conexión es obligatoria.
+Porque Entity Framework siempre necesita saber a qué base de datos conectarse, sin importar cómo generes el modelo.
 
-2)Para crear la base de datos desde las entidades
 Proyecto->appsettings.json
 ingresar la siguiente linea:
   "ConnectionStrings": {
     "DefaultConnection": "Server=DESKTOP-565TMAN;Database=FINANSYS;Trusted_Connection=True;TrustServerCertificate=True;"
   }
 
-***********Crear clase AppDbContext.cs que extiende DbContext
-¿Qué es DbContext?
+===============================================
+4) Crear Clases Entidad                       |
+===============================================
+Existen dos enfoques: 
+*Database First: primero se crea las tablas de la base de datos
+*Code First: primero se crea las clases entidades que van a ser mapeadas a la base de datos
 
-Es una clase que hereda de DbContext (de Entity Framework Core).
-Abre y administra la conexión, su función es gestionar la conexión a la base de datos y definir qué tablas existen en esa base según tus clases (modelos).
+public DateTime FechaCreacion { get; private set; }
 
-Ubicación recomendada: 
-Depende del tipo de proyecto, pero la mejor práctica general es crear una carpeta:
-Data o Persistence
+Anotaciones básicas:
+[Key]  // Siempre para clave primaria
+[Required]  // Para campos NOT NULL
+[StringLength(255)]  // Para campos VARCHAR/NVARCHAR
+[MaxLength(255)]  // Alternativa a StringLength
+[Table("NombreTabla")]  // Si el nombre de tabla difiere
+[Column("NombreColumna")]  // Si el nombre de columna difiere
+[ForeignKey("CampoId")]  // Para relaciones
+[DatabaseGenerated]  // Para valores generados
+[NotMapped]  // Para propiedades NO mapeadas a BD
 
-En otras palabras:
+===============================================
+3) Crear DbContext                            |
+===============================================
 
 DbContext es el “cerebro” de Entity Framework.
 Es el objeto que ASP.NET usa para consultar, insertar, actualizar y eliminar datos en SQL Server.
+Abre y administra la conexión, su función es gestionar la conexión a la base de datos y definir qué tablas existen en esa base según tus clases (modelos).
 
-*DbSet: sirve para especificar que existe una tabla
+Buena practica crear una carpeta:
+/Data o Persistence
+   AppDbContext.cs
+
+Crear una clase (AppDbContext) la clase extiende(:) de DbContext
+Crear un constructor:  public AppDbContext(DbContextOptions<AppDbContext> options):base(options) { }
+Crear un DbSet: public DbSet<Usuarios> Usuarios { get; set; }
+*DbSet<T> Le dice a EF Existe una tabla llamada Usuarios basada en la entidad Usuario
+
+2.1)opción para cuando la base de datos ya esta creada
+buscar->consola del Administrador de Paquetes
+Scaffold-DbContext "Data Source=name_server;Database=name_database;Trusted_Connection=True;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -Force
+
+2)Para crear la base de datos desde las entidades
+
+
+
+
 
 
 agregar la conexión al Archivo Program.cs
