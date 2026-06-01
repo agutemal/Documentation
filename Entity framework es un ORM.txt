@@ -72,10 +72,13 @@ Scaffold-DbContext "Data Source=name_server;Database=name_database;Trusted_Conne
 
 2)Para crear la base de datos desde las entidades
   Abrir una nueva consola->Herramientas->Administrador de paquetes nuget->consola de administrador de paquetes
-En consola ejecutar Add-Migration initBd
-y ejecutar el proyecto 
+-En consola ejecutar Add-Migration initBd
+-Ejecutar Update-database
 
 
+
+
+================================================FIN============================================
 
 agregar la conexión al Archivo Program.cs
 // 🔹 Agregar conexión a la base de datos SQL Server
