@@ -1,0 +1,15 @@
+Iniciar sesión como administrador: sudo su -
+si el signo de menos -  se incluye los ficheros de inicialización del usuario, si no se incluye el entorno 
+actual seria el mismo para la nueva sesión con el mismo usuario, vas a conservar las variables de entorno del
+usuario anterior
+
+===-u
+sirve para definir un usuario al comando:
+lastlog -u root
+
+==============CONFIGURACIONES DE SEGURIDAD=================
+Crear un usuario adicional que no sea root para trabajo
+useradd -c "Abrahan Guatemal" -g administrators -d /home/aguatemal -m -s /bin/bash aguatemal
+-m es igual que -d /home/aguatemal
+
+passwd aguatemal
