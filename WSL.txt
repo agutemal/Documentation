@@ -4,8 +4,11 @@ GNU/Linux nativo directamente en Windows sin la sobrecarga de una máquina virtu
 
 Pasos para instalar: 
 1) wsl --install        instala la aplicacion 
-2) wls --version        muestra version de wsl
-3) wsl -l -v            muestra distribuciones instaladas
+2) wsl --version        muestra version de wsl
+3) wsl --list --online   muestra versiones de Linux disponibles
+4) wsl --install Ubuntu-24.04
+5) wsl -l -v            muestra distribuciones instaladas
+6) wsl -d <Distro>      Ingresar a distribución
 
 Integracion con dockert desktop:
 1) ir a docker desktop Settings->general->Use the WSL 2 based engine.
