@@ -1,4 +1,49 @@
-Iniciar sesión como administrador: sudo su -
+======================COMANDOS======================
+Existe comandos con argumentos y sin argumento
+-Para ejecutar varios comandos a la vez se puede usar . o ,
+-htop: detalla el consumo de recursos
+-Editor de texto:
+-Tipos de usuario: depende el tipo de usuario se puede realizar una u otras actividades,
+exiten 3 tipos: root, normales, especiales
+-usuario root: es el usuario administrador del sistema, no conviene usar este usuario
+se debe usar para tareas administrativas muy completas
+
+-Rutas absolutas: siempre se inicia desde la ruta que esta al comienzo se usa /
+cd /home/curso/dir
+-Ruta relativa: se desplaza desde el punto donde estoy
+-man: presenta la documentación de comandos
+-file: muestra el tipo de archivo
+-mkdir: se puede crear carpetas y subcarpetas con: mkdir -p /carpeta01/prueba
+-touch: sirve para crear archivos o para editar la fecha de modificacion
+-echo mensaje de prueba>accesos.txt
+-cp -i accesos.txt prueba.txt
+-cp -r dir1 dir2
+
+====================METACARACTERES==================
+sirven para invocar varios ficheros al mismo tiempo
+-* siver para completar el resto de la cadena
+ls b* -> muestra todos los ficheros que inicien con b, es como el like sql
+-? reemplaza un carácter
+ls ?p
+ls [ab]* -> me lista archivos que inician con a o con b
+
+cuando inicia por d es directorio
+cuando inicia por - es un archivo
+cuando inicia por l son enlaces (accesos directos)
+drwxr-xr-x
+-rwxr-xr-x
+lrwxr-xr-x
+
+2 carpeta bacia
+drwxr-xr-x 2
+3 carpeta con supcarpetas
+drwxr-xr-x 3 
+4 varias carpetas 
+drwxr-xr-x 4 
+========================FICHEROS====================
+Un fichera es la forma en que se guarda los datos
+
+-Iniciar sesión como administrador: sudo su -
 si el signo de menos -  se incluye los ficheros de inicialización del usuario, si no se incluye el entorno 
 actual seria el mismo para la nueva sesión con el mismo usuario, vas a conservar las variables de entorno del
 usuario anterior
