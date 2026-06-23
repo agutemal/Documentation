@@ -23,7 +23,28 @@ cd /home/curso/dir
 -rm -r elimina toda la carpeta con todos los archivos, tener cuidado
 -rmdir elimina directorios, no permite eliminar directorios que están con archivos, se debe primero
 rm /ruta/*
+-tail muestra las primeras líneas tail -n 10, tail -f nombreFichero -> permite leer en tiempo real
+-head head -n 10
+-tree permite lista directorios, también en dispositivos externos
+-who lista los usuarios activos en el servidor
+=======================Enlaces======================
+Es similar a un acceso directo en Windows
+Existe dos tipos, físicos y simbólicos
+cuando Linux crea un fichero los vincula a un numero INODO, que tiene toda la información de metada del fichero.
+Cuando se crea un archivo el numero de INODO se guarda en la tabla nodos en el sistema
 
+-enlaces físico: tiene etiquetas
+-enlace de tipo hard
+-usando el comando ls -l luego de la columna permisos se tiene una columna que muestra el 
+-numero de enlaces que tiene el  fichero
+-ln accesos2.txt fichero.enlace.txt -> ambos archivos van a tener el mismo INODO
+ls -li nombrefichero con ese comando le dice al sistema que va consultar un INODO
+
+enlaces simbólicos: son mas parecidos a los enlaces de Windows
+ln -s nombreficheroOrginal nombreFicheroEnlace
+lrwxrwxrwx
+la l signigica linkS
+si elimino el archivo original el enlace queda dañado
 ====================METACARACTERES==================
 sirven para invocar varios ficheros al mismo tiempo
 -* siver para completar el resto de la cadena
