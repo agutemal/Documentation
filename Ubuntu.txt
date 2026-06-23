@@ -18,6 +18,11 @@ cd /home/curso/dir
 -echo mensaje de prueba>accesos.txt
 -cp -i accesos.txt prueba.txt
 -cp -r dir1 dir2
+-mv sirve para mover o renombrar ficheros
+-rm elimina archivos
+-rm -r elimina toda la carpeta con todos los archivos, tener cuidado
+-rmdir elimina directorios, no permite eliminar directorios que están con archivos, se debe primero
+rm /ruta/*
 
 ====================METACARACTERES==================
 sirven para invocar varios ficheros al mismo tiempo
