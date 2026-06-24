@@ -1,0 +1,20 @@
+Conocimientos:
+Spring Boot
+.NET 
+
+Principios SOLID.
+Arquitecturas de desarrollo.
+Desarrollo Backend(Avanzado)
+Desarrollo en cloud.
+Integración y distribución continua.
+APIs REST
+Gestión de repositorios mediante GitHub o Azure DevOps.
+Construcción y despliegue de aplicaciones en contenedores Docker.
+Diagnóstico y resolución de problemas técnicos en aplicaciones y servicios.
+Elaboración de documentación funcional y técnica.
+Integración de sistemas mediante APIs REST.
+Metodologías ágiles (Scrum o Kanban).
+
+Administración de bases de datos SQL Server
+Administración de IIS
+Administración de SSIS
