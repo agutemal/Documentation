@@ -27,6 +27,10 @@ rm /ruta/*
 -head head -n 10
 -tree permite lista directorios, también en dispositivos externos
 -who lista los usuarios activos en el servidor
+-History muestra lista de los últimos comandos
+-!253 ejecuta el comando 253 del history
+-history -d 253 elimina el comando 253
+-Ctrl + Alt + F3.....F6
 =======================Enlaces======================
 Es similar a un acceso directo en Windows
 Existe dos tipos, físicos y simbólicos
@@ -77,6 +81,10 @@ usuario anterior
 ===-u
 sirve para definir un usuario al comando:
 lastlog -u root
+
+-du -m /dirección/carpeta-> muestra el tamaño de una carpeta en megas
+-df -> disk free la cantidad de espacio en disco que ocupa el sistema de archivos
+-df -m -> megas -df -h gigas
 
 ==============CONFIGURACIONES DE SEGURIDAD=================
 Crear un usuario adicional que no sea root para trabajo
