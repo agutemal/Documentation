@@ -1,0 +1,22 @@
+¿Qué es Kubernetes?
+Es una herramienta que organiza y gestiona contenedores. Se asegura de que
+todo funcione en armonía, sin la necesidad de hacerlo manual.
+
+Kubernetes = k8s
+    v
+    8
+Cuando se empieza a utilizar contenedores surgen problemas:
+-Es un caos manejarlos
+-Fallos inesperados
+-Mas trafico
+-El balanceo de carga es mas complejo
+
+K8S soluciona todo eso automatizando TODO
+-Kubernetes tiene la posibilidad de levantar mas contenedores si el trafico
+aumenta.
+-Kubernetes se encarga de balancear la carga de trabajo de manera automática
+a trávez de los servicios.
+
+=========================NODO Y CLUSTER============================
+Nodo: puede ser una maquina física o virtual donde se ejecuta contenedores
+Cluster: es un grupo de nodos que trabajo juntos

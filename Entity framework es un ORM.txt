@@ -33,6 +33,7 @@ ingresar la siguiente linea:
 4) Crear Clases Entidad                       |
 ===============================================
 Existen dos enfoques: 
+<<<<<<< HEAD
 *Database First: primero se crea las tablas de la base de datos
 -Abrir consola: Herramientas->Administrador de paquetes Nuget->Consola
 
@@ -46,6 +47,9 @@ Scaffold-DbContext "Server=localhost,1433;Database=CRUD_USUARIOS;User Id=sa;Pass
 dotnet ef dbcontext scaffold "Server=localhost,1433;Database=CRUD_USUARIOS;User Id=sa;Password=Siccec2014;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Model -Context AppCrudContext -Force
 
 
+=======
+*Database First: primero se crea las tablas de la base de datos, BDD con code first se puede versionar
+>>>>>>> ad694f9a78cf0e1409669642c1edd21d628896e8
 *Code First: primero se crea las clases entidades que van a ser mapeadas a la base de datos
 
 public DateTime FechaCreacion { get; private set; }
@@ -85,11 +89,14 @@ Herramientas->Administrador de paquetes nuget->Consola del administrador de paqu
 Scaffold-DbContext "Data Source=name_server;Database=name_database;Trusted_Connection=True;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -Force
 
 2)Para crear la base de datos desde las entidades
+  Abrir una nueva consola->Herramientas->Administrador de paquetes nuget->consola de administrador de paquetes
+-En consola ejecutar Add-Migration initBd
+-Ejecutar Update-database
 
 
 
 
-
+================================================FIN============================================
 
 agregar la conexión al Archivo Program.cs
 // 🔹 Agregar conexión a la base de datos SQL Server

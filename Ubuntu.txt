@@ -1,0 +1,94 @@
+======================COMANDOS======================
+Existe comandos con argumentos y sin argumento
+-Para ejecutar varios comandos a la vez se puede usar . o ,
+-htop: detalla el consumo de recursos
+-Editor de texto:
+-Tipos de usuario: depende el tipo de usuario se puede realizar una u otras actividades,
+exiten 3 tipos: root, normales, especiales
+-usuario root: es el usuario administrador del sistema, no conviene usar este usuario
+se debe usar para tareas administrativas muy completas
+
+-Rutas absolutas: siempre se inicia desde la ruta que esta al comienzo se usa /
+cd /home/curso/dir
+-Ruta relativa: se desplaza desde el punto donde estoy
+-man: presenta la documentación de comandos
+-file: muestra el tipo de archivo
+-mkdir: se puede crear carpetas y subcarpetas con: mkdir -p /carpeta01/prueba
+-touch: sirve para crear archivos o para editar la fecha de modificacion
+-echo mensaje de prueba>accesos.txt
+-cp -i accesos.txt prueba.txt
+-cp -r dir1 dir2
+-mv sirve para mover o renombrar ficheros
+-rm elimina archivos
+-rm -r elimina toda la carpeta con todos los archivos, tener cuidado
+-rmdir elimina directorios, no permite eliminar directorios que están con archivos, se debe primero
+rm /ruta/*
+-tail muestra las primeras líneas tail -n 10, tail -f nombreFichero -> permite leer en tiempo real
+-head head -n 10
+-tree permite lista directorios, también en dispositivos externos
+-who lista los usuarios activos en el servidor
+-History muestra lista de los últimos comandos
+-!253 ejecuta el comando 253 del history
+-history -d 253 elimina el comando 253
+-Ctrl + Alt + F3.....F6
+=======================Enlaces======================
+Es similar a un acceso directo en Windows
+Existe dos tipos, físicos y simbólicos
+cuando Linux crea un fichero los vincula a un numero INODO, que tiene toda la información de metada del fichero.
+Cuando se crea un archivo el numero de INODO se guarda en la tabla nodos en el sistema
+
+-enlaces físico: tiene etiquetas
+-enlace de tipo hard
+-usando el comando ls -l luego de la columna permisos se tiene una columna que muestra el 
+-numero de enlaces que tiene el  fichero
+-ln accesos2.txt fichero.enlace.txt -> ambos archivos van a tener el mismo INODO
+ls -li nombrefichero con ese comando le dice al sistema que va consultar un INODO
+
+enlaces simbólicos: son mas parecidos a los enlaces de Windows
+ln -s nombreficheroOrginal nombreFicheroEnlace
+lrwxrwxrwx
+la l signigica linkS
+si elimino el archivo original el enlace queda dañado
+====================METACARACTERES==================
+sirven para invocar varios ficheros al mismo tiempo
+-* siver para completar el resto de la cadena
+ls b* -> muestra todos los ficheros que inicien con b, es como el like sql
+-? reemplaza un carácter
+ls ?p
+ls [ab]* -> me lista archivos que inician con a o con b
+
+cuando inicia por d es directorio
+cuando inicia por - es un archivo
+cuando inicia por l son enlaces (accesos directos)
+drwxr-xr-x
+-rwxr-xr-x
+lrwxr-xr-x
+
+2 carpeta bacia
+drwxr-xr-x 2
+3 carpeta con supcarpetas
+drwxr-xr-x 3 
+4 varias carpetas 
+drwxr-xr-x 4 
+========================FICHEROS====================
+Un fichera es la forma en que se guarda los datos
+
+-Iniciar sesión como administrador: sudo su -
+si el signo de menos -  se incluye los ficheros de inicialización del usuario, si no se incluye el entorno 
+actual seria el mismo para la nueva sesión con el mismo usuario, vas a conservar las variables de entorno del
+usuario anterior
+
+===-u
+sirve para definir un usuario al comando:
+lastlog -u root
+
+-du -m /dirección/carpeta-> muestra el tamaño de una carpeta en megas
+-df -> disk free la cantidad de espacio en disco que ocupa el sistema de archivos
+-df -m -> megas -df -h gigas
+
+==============CONFIGURACIONES DE SEGURIDAD=================
+Crear un usuario adicional que no sea root para trabajo
+useradd -c "Abrahan Guatemal" -g administrators -d /home/aguatemal -m -s /bin/bash aguatemal
+-m es igual que -d /home/aguatemal
+
+passwd aguatemal
