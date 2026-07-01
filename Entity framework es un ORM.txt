@@ -34,6 +34,18 @@ ingresar la siguiente linea:
 ===============================================
 Existen dos enfoques: 
 *Database First: primero se crea las tablas de la base de datos
+-Abrir consola: Herramientas->Administrador de paquetes Nuget->Consola
+
+Comando desde consola de visual studio:
+ Ejecuta si ya esta definida la cadena de conexion
+---Scaffold-DbContext Name=DefaultConnection Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -ContextDir Data -Context ApDbContext -Force
+---Para entornos Docker quitar Trusted_Connection=True; de la cadena de conexion
+
+Scaffold-DbContext "Server=localhost,1433;Database=CRUD_USUARIOS;User Id=sa;Password=Siccec2014;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Model -Context AppCrudContext -Force
+
+dotnet ef dbcontext scaffold "Server=localhost,1433;Database=CRUD_USUARIOS;User Id=sa;Password=Siccec2014;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Model -Context AppCrudContext -Force
+
+
 *Code First: primero se crea las clases entidades que van a ser mapeadas a la base de datos
 
 public DateTime FechaCreacion { get; private set; }
@@ -67,7 +79,9 @@ Crear un DbSet: public DbSet<Usuarios> Usuarios { get; set; }
 *DbSet<T> Le dice a EF Existe una tabla llamada Usuarios basada en la entidad Usuario
 
 2.1)opción para cuando la base de datos ya esta creada
-buscar->consola del Administrador de Paquetes
+Herramientas->Administrador de paquetes nuget->Consola del administrador de paquetes
+
+
 Scaffold-DbContext "Data Source=name_server;Database=name_database;Trusted_Connection=True;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -Force
 
 2)Para crear la base de datos desde las entidades

@@ -11,3 +11,10 @@ Integracion con dockert desktop:
 1) ir a docker desktop Settings->general->Use the WSL 2 based engine.
 1) ir a docker desktop Settings->Resources->WSL Integration->Enable integration with additional distros.
 3) seleccionar la version de linux que se esta usando con WSL.
+
+=============COMANDOS=========
+-listar: wsl -l -v
+-Detener proceso especifico: wsl --terminate Ubuntu-24.04
+-Detener todo: wsl --shutdown
+-Levantar todo: wsl 
+-Levantar especifico: wsl -d Ubuntu-24.04
