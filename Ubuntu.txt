@@ -1,3 +1,6 @@
+=========VERSION DE UBUNTU=============
+lsb_release -a
+
 ======================COMANDOS======================
 Existe comandos con argumentos y sin argumento
 -Para ejecutar varios comandos a la vez se puede usar . o ,
@@ -16,8 +19,8 @@ cd /home/curso/dir
 -mkdir: se puede crear carpetas y subcarpetas con: mkdir -p /carpeta01/prueba
 -touch: sirve para crear archivos o para editar la fecha de modificacion
 -echo mensaje de prueba>accesos.txt
--cp -i accesos.txt prueba.txt
--cp -r dir1 dir2
+-cp -i accesos.txt prueba.txt -> pide autorización antes de sobre escribir el archivo
+-cp -r dir1 dir2 -> copia todo el directorio y sub directorios
 -mv sirve para mover o renombrar ficheros
 -rm elimina archivos
 -rm -r elimina toda la carpeta con todos los archivos, tener cuidado
@@ -92,3 +95,20 @@ useradd -c "Abrahan Guatemal" -g administrators -d /home/aguatemal -m -s /bin/ba
 -m es igual que -d /home/aguatemal
 
 passwd aguatemal
+
+============COPIAR ARCHIVOS DESDE LA MISMA LAN========
+-Windows to ubuntu
+scp C:\Users\Administrador\Desktop\iRedMail-2.9.tar.gz abrahan@192.168.2.20:/home/abrahan/
+
+-ubunto to Windows
+
+=============MONTAR UNA UNIDAD EN RED=================
+sudo apt update
+sudo apt install cifs-utils -y
+-crea un punto de montaje
+sudo mkdir -p /mnt/nas
+-monta la carpeta compartida
+sudo mount -t cifs //192.168.1.2/Public /mnt/nas -o guest
+
+
+
