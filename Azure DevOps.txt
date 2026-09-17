@@ -1,0 +1,11 @@
+Azure DevOps es una plataforma de Microsoft Azure que ofrece un conjunto de servicios en la nube y locales para planificar, desarrollar, probar y desplegar software de forma colaborativa y automatizada.
+
+Azure DevOps lo compone 5 partes:
+-Boards: Es una herramienta que sirve para seguimiento a tu back loc y control del progreso del proyecto.
+-Repos: Es la herramienta que hospedara a todos los archivos de tu proyecto, puede ser código o documentación.
+-Pipelines: Es la herramienta que se usara para desplegar el software a diferentes ambientes de trabajo, permite saber que se despliega y como se despliega, 
+es donde se aplica CI/CD 
+-Test Plans: Permite saber los resultados de las pruebas realizadas el proyecto, puedes ser las pruebas realizadas por un tester o por un pipeline.
+-Artifacts: No es muy común usar esta herramienta, porque no todos los proyectos generan un artefacto 
+
+minuto 3:12

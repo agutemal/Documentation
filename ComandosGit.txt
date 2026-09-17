@@ -1,0 +1,28 @@
+===Listar ramas====
+	git branck
+	git branck -r
+===Cambiar de rama===
+	git checkout
+==Cambiar nombre rama==
+git branch -m master main
+
+==Conectar repositorio local a github==
+git remote add origin
+
+==Conectar repositorio local a repositorio privado==
+->setings->Collaborators->add people
+
+==Descargar cambios desdes repositorio pus
+git pull origin main
+
+======Subir cambios
+git status
+git add.
+git commit -m "comentario"
+git push origin nombre_rama
+
+===Descargar cambios sin perder local
+git stash push -m "Mis cambios locales antes de actualizar"
+git stash list
+git pull origin desa-formularios
+git stash pop

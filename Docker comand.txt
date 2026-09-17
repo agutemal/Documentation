@@ -15,11 +15,14 @@ docker-compose ps: lista los contenedores
 docker-compose stop
 docker-compose down
 
-**************Ingreso a consola**************
+**************Ingreso a consola*****************
 ingresar a consola: 
 docker exec -it <nombre_o_id_del_contenedor> bash
 docker exec -it mysql_server bash
 docker exec -it processmaker bash
+
+************Crear un contenedor en docker********
+docker pull nombre_paquete
 
 
 Lsitar bolumenes: sudo docker volume ls
