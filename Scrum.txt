@@ -1,0 +1,31 @@
+Sprint: Es el periodo de tiempo en el cual el equipo se compromete a completar
+una cierta cantidad de trabajo.
+-Un sprint debe ser corto y tener entre 1 a 2 semanas.
+-El concepto sprint es el núcleo de scrum.
+
+En Scrum existen 3 artefactos:
+1) Product backlog: Es la lista de todo el trabajo que se necesita realizar para completar el proyecto.
+2) Sprint Backlog: Es la lista de ítems(Historias de usuario) que el equipo elige para implementar dentro de un spring.
+	-Antes de un sprint backlog se realiza una reunión llamada sprint planing en la cual el equipo se encarga de elegir
+	 en que ítems va trabajar a lo largo del sprint.
+	-La lista de ítems no debe ser alterada en lo que dure el sprint.
+3) Sprint Goal: se define al inicio del sprint y es lo que el equipo quiere alcanzar al terminar el sprint.
+	-Este objetivo es único para cada equipo y para cada implementación de scrum.
+	-Lo importante es que se pueda medir al final del sprint, porque muestra el avance que se va acumulando hasta completar
+	 el proyecto.
+
+Scrum board: TO DO, IN PROGRESS, RESOLVED, DONE.
+User Story: es una unidad de trabajo, debe seguir un formato estándar para ser aceptada en el backlog.
+	-Todas las historias de usuario deben cumplir con Definition of Ready.
+
+Historias de Usuario:
+-Cada funcionalidad se debe escribir como historia de Usuario
+-Como: usuario del sistema 
+-Quiero: visualizar que el sistema me muestre el logo de la universidad.
+-Para: lograr pertenencia hacia la universidad.
+-Condiciones:
+	-Los colores.
+	-En la ventana de ingreso.
+	-El encabezado debe ser similar al de la pagina web.
+	-El login del usuario debe ser visible en todo momento.
+
