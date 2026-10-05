@@ -1,3 +1,5 @@
+SCRUM: es un marco de trabajo para desarrollo ágil, iterativo e incremental.
+
 Sprint: Es el periodo de tiempo en el cual el equipo se compromete a completar
 una cierta cantidad de trabajo.
 -Un sprint debe ser corto y tener entre 1 a 2 semanas.
