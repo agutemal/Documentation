@@ -1,0 +1,24 @@
+¿Qué palabra clave se usa en C# para declarar una variable cuyo valor no puede cambiar después de asignarse?
+const
+
+¿Cuál es la diferencia principal entre una clase (class) y una estructura (struct) en C#?
+class es un tipo por referencia, struct es un tipo por valor
+
+En ASP.NET Core, ¿qué archivo/clase es el punto de entrada donde se configuran los servicios y el pipeline de middleware?
+Program.cs
+
+¿Qué es la inyección de dependencias (Dependency Injection) en el contexto de ASP.NET Core?
+Un patrón de diseño donde las dependencias de una clase se proveen desde afuera en vez de crearlas internamente
+
+¿Qué significa que un tipo en C# sea 'nullable' (por ejemplo, int?)?
+Que el tipo puede contener el valor null además de sus valores normales
+
+¿Para dinero que tipo de variable se recomienda usar?
+para dinero siempre decimal
+
+
+Diferencia entre tipo por valor y por referencia
+const vs readonly
+Por qué string es inmutable y cuándo usar StringBuilder
+decimal vs double
+Qué hace var y por qué no es tipado dinámico

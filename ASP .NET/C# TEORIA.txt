@@ -1,0 +1,73 @@
+1)Variables
+Existen dos tipos que se comportan distinto en memoria
+-Tipos por valor (value types:la variable contiene el dato
+	int a=10
+-Tipos por referencia (reference types) — la variable contiene una dirección al objeto en el heap
+El heap es una región de la memoria RAM utilizada para la asignación dinámica de memoria, donde se almacenan los tipos de referencia (como objetos, clases, matrices y cadenas de texto)
+	var lista1 = new List<int> { 1, 2 };
+
+Por valor	int, long, double, decimal, bool, char, struct, enum, DateTime
+Por referencia	string, object, class, arreglos, List<T>, interfaces, delegados
+
+-var: es una palabra reservada que permite declarar una variable con tipado implícito, el compilador deduce automáticamente el tipo de dato basándose en el valor que se le asigno.
+
+2)Constantes: const vs. readonly
+Ambas impiden reasignación, pero en momentos distintos
+-const: se resuelve en tiempo de compilación, el valor no se puede modificar.
+	public const int MaxIntentos = 3;
+
+-readonly:Se resuelve en TIEMPO DE EJECUCIÓN, Puede asignarse un valor en el constructor
+	 public readonly string ConnectionString;
+
+
+Un detalle que impresiona en entrevistas: si una librería expone un const y lo cambias, los proyectos que ya la compilaron siguen usando el valor viejo hasta recompilar. Con readonly eso no pasa. Por eso, en APIs públicas se prefiere static readonly.
+
+3)Nullables
+Los tipos por valor no aceptan null, pero se puede habilitar con ?:
+	int? intentos = null; 
+
+=======================================================================================
+Conversión de tipos: implícita, explícita, Parse y TryParse
+1. Conversión implícita (widening)
+Ocurre cuando el tipo destino es "más grande" y puede contener cualquier valor del origen sin pérdida.
+int numero = 100;
+long grande = numero;     // int (32 bits) cabe en long (64 bits) → automático
+
+2. Conversión explícita (narrowing / cast)
+Cuando el destino es más pequeño, el compilador te exige un cast entre paréntesis.
+double precio = 9.78;
+int entero = (int)precio;    // 9 — TRUNCA, no redondea
+
+3. Parse: de texto a tipo
+El cast no sirve para pasar de string a número. Un string no "contiene" un número, contiene caracteres que hay que interpretar. Para eso están los métodos Parse.
+int edad = int.Parse("30");
+
+4. TryParse 
+Las excepciones son costosas.son para lo que no debería pasar; usarlas para flujo normal es un anti-patrón.
+
+=======================================================================================
+Métodos, parámetros y valores de retorno
+1) Partes
+public        int      Sumar(int a, int b)
+//  ↑          ↑         ↑        ↑
+// acceso   retorno   nombre   parámetros
+{
+    return a + b;   // cuerpo
+}
+Modificadores de acceso
+Modificador		Visible desde
+public			cualquier parte
+private			solo la misma clase (predeterminado si omites)
+protected		la clase y sus derivadas
+internal		el mismo ensamblado (proyecto)
+protected internal	mismo ensamblado o derivadas
+private protected	derivadas dentro del mismo ensamblado
+
+Principio de diseño que vale citar: empieza siempre con el acceso más restrictivo y ábrelo solo cuando haga falta
+void no es un tipo real, es la ausencia de retorno.
+
+
+
+
+
+
