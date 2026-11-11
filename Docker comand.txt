@@ -4,18 +4,35 @@ docker version
 docker-compose version	
 docker-compose up -d: Crear en modo detach los contenedores (servicios) que están descritos en el docker-compose.yml
 no se muestra mensajes de log
+docker-compose up: La terminal queda ocupada mostrando todos los logs en tiempo real, cierra consola todos los contenedores se detienen
 docker-compose stop: Detiene los contenedores
 docker-compose run: Inicia los contenedores descritos en el docker-compose.yml que estén parados.
 docker-compose restart: Reinicia los contenedores.
 docker-compose logs: Muestra los logs de todos los servicios del escenario
 docker-compose logs servicio1: Muestra los logs del servicio llamado servicio1
 docker-compose ps: lista los contenedores
+docker compose pull: descarga imágenes recientes de Docker hub
+sudo docker compose up -d --build :reconstruye un contenedor
+docker compose config: validar si el archivo .yml esta bien configurado
+docker compose build 
+docker exec -it glpi-php bash: ingresar consola php
+Docker iamges: lista imágenes descargadas
+
+docker restart <nombre_o_id_del_contenedor>
 
 *******Eliminar un contenedor*****************
+sudo docker ps -a
+sudo docker rm xx
+
+*******Eliminar imagen*****************
+sudo docker rmi idimagen
+
 docker-compose stop
 docker-compose down
 
-**************Ingreso a consola*****************
+**************Ingreso a consola MYSQL*****************
+ sudo docker exec -it snipeit-db mariadb -u root -p
+
 ingresar a consola: 
 docker exec -it <nombre_o_id_del_contenedor> bash
 docker exec -it mysql_server bash
