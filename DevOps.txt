@@ -1,0 +1,19 @@
+
+Responsabilidades DevOps
+-Desplegar recursos de infraestructura.
+-Implementar observabilidad y Monitoreo.
+-Implementación CI/CD.
+-Mantener y optimizar infraestructura.
+-Automatización de operación.
+
+Temario
+-¿Que es DevOps?
+-Actividades DevOps
+-Roadmap de aprendizaje
+	-Linux
+	-Programación
+	-CI/CD
+	-Cloud
+	-Infra como código
+	-Docker y Kubernetes
+	-Obervabilidad
